@@ -483,7 +483,7 @@
 					"$(inherited)",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.visioncameraworkshop";
+				PRODUCT_BUNDLE_IDENTIFIER = com.visioncameraworkshop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisionCameraWorkshop.app/VisionCameraWorkshop";
@@ -510,7 +510,7 @@
 					"$(inherited)",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.visioncameraworkshop";
+				PRODUCT_BUNDLE_IDENTIFIER = com.visioncameraworkshop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisionCameraWorkshop.app/VisionCameraWorkshop";
@@ -524,6 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TQS3FRJWX7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = VisionCameraWorkshop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -536,7 +537,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.visioncameraworkshop";
+				PRODUCT_BUNDLE_IDENTIFIER = com.visioncameraworkshop;
 				PRODUCT_NAME = VisionCameraWorkshop;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -551,6 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TQS3FRJWX7;
 				INFOPLIST_FILE = VisionCameraWorkshop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -562,7 +564,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.visioncameraworkshop";
+				PRODUCT_BUNDLE_IDENTIFIER = com.visioncameraworkshop;
 				PRODUCT_NAME = VisionCameraWorkshop;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

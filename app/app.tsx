@@ -9,6 +9,7 @@
  * The app navigation resides in ./app/navigators, so head over there
  * if you're interested in adding screens and navigators.
  */
+import "react-native-reanimated"
 import "./i18n"
 import "./utils/ignoreWarnings"
 import { useFonts } from "expo-font"
