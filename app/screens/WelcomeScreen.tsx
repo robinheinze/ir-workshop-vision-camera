@@ -1,22 +1,30 @@
 import { observer } from "mobx-react-lite"
-import React, {
-  FC,
-} from "react"
-import { Image, ImageStyle, TextStyle, View, ViewStyle } from "react-native"
+import React, { FC, useEffect } from "react"
+import { Alert, Image, ImageStyle, TextStyle, View, ViewStyle } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
-import {
-  Text,
-} from "../components"
+import { Text } from "../components"
 import { isRTL } from "../i18n"
 import { colors, spacing } from "../theme"
+import { Camera } from "react-native-vision-camera"
 
 const welcomeLogo = require("../../assets/images/logo.png")
 const welcomeFace = require("../../assets/images/welcome-face.png")
 
+const checkCameraPermission = async () => {
+  let status = await Camera.getCameraPermissionStatus()
+  if (status !== "authorized") {
+    await Camera.requestCameraPermission()
+    status = await Camera.getCameraPermissionStatus()
+    if (status === "denied") {
+      Alert.alert("You will not be able to scan if you do not allow camera access")
+    }
+  }
+}
 
-export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen(
-) {
-
+export const WelcomeScreen: FC = observer(function WelcomeScreen() {
+  useEffect(() => {
+    checkCameraPermission()
+  }, [])
   return (
     <View style={$container}>
       <View style={$topContainer}>
