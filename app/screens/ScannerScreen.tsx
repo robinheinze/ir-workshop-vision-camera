@@ -6,8 +6,8 @@ import { AppStackParamList } from "../navigators"
 import { Camera, useCameraDevices } from "react-native-vision-camera"
 import { checkCameraPermission } from "../utils/checkCameraPermissions"
 
-export const CameraScreen: FC<StackScreenProps<AppStackParamList, "Camera">> = observer(
-  function CameraScreen() {
+export const ScannerScreen: FC<StackScreenProps<AppStackParamList, "Scanner">> = observer(
+  function ScannerScreen() {
     const devices = useCameraDevices()
     const device = devices.back
 
@@ -23,9 +23,6 @@ export const CameraScreen: FC<StackScreenProps<AppStackParamList, "Camera">> = o
       )
 
     return <Camera style={StyleSheet.absoluteFill} device={device} isActive={true} />
-
-    // TODO: Add a button to switch between front and back camera
-    // TODO: Add a button to take a picture
   },
 )
 

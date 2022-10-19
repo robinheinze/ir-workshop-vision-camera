@@ -30,9 +30,19 @@ export const WelcomeScreen: FC = observer(function WelcomeScreen() {
 
       <SafeAreaView style={$bottomContainer} edges={["bottom"]}>
         <View style={$bottomContentContainer}>
-          <Text tx="welcomeScreen.postscript" size="md" />
+          <Button preset="reversed" onPress={() => navigate("Camera")} text="Camera" />
+          <Button preset="reversed" onPress={() => navigate("Scanner")} text="Scanner" />
+          <Button
+            preset="reversed"
+            onPress={() => navigate("FacialRecognition")}
+            text="Facial Recognition"
+          />
+          <Button
+            preset="reversed"
+            onPress={() => navigate("TextRecognition")}
+            text="Text Recognition"
+          />
         </View>
-        <Button preset="filled" onPress={() => navigate("Camera")} text="Take Pictures" />
       </SafeAreaView>
     </View>
   )

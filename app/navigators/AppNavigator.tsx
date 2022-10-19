@@ -11,7 +11,12 @@ import { observer } from "mobx-react-lite"
 import React from "react"
 import { useColorScheme } from "react-native"
 import Config from "../config"
-import { WelcomeScreen } from "../screens"
+import {
+  FacialRecognitionScreen,
+  ScannerScreen,
+  TextRecognitionScreen,
+  WelcomeScreen,
+} from "../screens"
 import { CameraScreen } from "../screens/CameraScreen"
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 
@@ -31,6 +36,9 @@ import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 export type AppStackParamList = {
   Welcome: undefined
   Camera: undefined
+  FacialRecognition: undefined
+  TextRecognition: undefined
+  Scanner: undefined
   // 🔥 Your screens go here
 }
 
@@ -50,9 +58,12 @@ const Stack = createNativeStackNavigator<AppStackParamList>()
 
 const AppStack = observer(function AppStack() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Welcome" component={WelcomeScreen} />
+    <Stack.Navigator>
+      <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Camera" component={CameraScreen} />
+      <Stack.Screen name="Scanner" component={ScannerScreen} />
+      <Stack.Screen name="FacialRecognition" component={FacialRecognitionScreen} />
+      <Stack.Screen name="TextRecognition" component={TextRecognitionScreen} />
     </Stack.Navigator>
   )
 })
