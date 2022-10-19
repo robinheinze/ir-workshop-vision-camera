@@ -1,0 +1,18 @@
+diff --git a/node_modules/react-native-vision-camera/ios/Frame Processor/FrameProcessorPlugin.h b/node_modules/react-native-vision-camera/ios/Frame Processor/FrameProcessorPlugin.h
+index a2ccdcb..3bd5f58 100644
+--- a/node_modules/react-native-vision-camera/ios/Frame Processor/FrameProcessorPlugin.h	
++++ b/node_modules/react-native-vision-camera/ios/Frame Processor/FrameProcessorPlugin.h	
+@@ -52,8 +52,11 @@ objc_name : NSObject<FrameProcessorPluginBase>
+ @interface objc_name (FrameProcessorPlugin)                                         \
+ @end                                                                                \
+ @implementation objc_name (FrameProcessorPlugin)                                    \
+-                                                                                    \
+-__attribute__((constructor)) static void VISION_CONCAT(initialize_, objc_name)()    \
++
++ /**
++   https://github.com/mrousavy/react-native-vision-camera/issues/1244
++ */                                                                         \
+++(void)load   \
+ {                                                                                   \
+   [FrameProcessorPluginRegistry addFrameProcessorPlugin:@"__" @ #name callback:^id(Frame* frame, NSArray<id>* args) {    \
+     return [objc_name callback:frame withArgs:args];                               \
