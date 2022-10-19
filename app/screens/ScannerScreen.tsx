@@ -5,11 +5,13 @@ import { StackScreenProps } from "@react-navigation/stack"
 import { AppStackParamList } from "../navigators"
 import { Camera, useCameraDevices } from "react-native-vision-camera"
 import { checkCameraPermission } from "../utils/checkCameraPermissions"
+import { useIsFocused } from "@react-navigation/native"
 
 export const ScannerScreen: FC<StackScreenProps<AppStackParamList, "Scanner">> = observer(
   function ScannerScreen() {
     const devices = useCameraDevices()
     const device = devices.back
+    const isFocused = useIsFocused()
 
     useEffect(() => {
       checkCameraPermission()
@@ -22,7 +24,7 @@ export const ScannerScreen: FC<StackScreenProps<AppStackParamList, "Scanner">> =
         </View>
       )
 
-    return <Camera style={StyleSheet.absoluteFill} device={device} isActive={true} />
+    return <Camera style={StyleSheet.absoluteFill} device={device} isActive={isFocused} />
   },
 )
 

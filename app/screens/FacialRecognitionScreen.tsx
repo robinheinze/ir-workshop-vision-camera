@@ -5,11 +5,13 @@ import { StackScreenProps } from "@react-navigation/stack"
 import { AppStackParamList } from "../navigators"
 import { Camera, useCameraDevices } from "react-native-vision-camera"
 import { checkCameraPermission } from "../utils/checkCameraPermissions"
+import { useIsFocused } from "@react-navigation/native"
 
 export const FacialRecognitionScreen: FC<StackScreenProps<AppStackParamList, "FacialRecognition">> =
   observer(function FacialRecognitionScreen() {
     const devices = useCameraDevices()
     const device = devices.back
+    const isFocused = useIsFocused()
 
     useEffect(() => {
       checkCameraPermission()
@@ -22,7 +24,7 @@ export const FacialRecognitionScreen: FC<StackScreenProps<AppStackParamList, "Fa
         </View>
       )
 
-    return <Camera style={StyleSheet.absoluteFill} device={device} isActive={true} />
+    return <Camera style={StyleSheet.absoluteFill} device={device} isActive={isFocused} />
   })
 
 const $fullScreenCentered: ViewStyle = {
