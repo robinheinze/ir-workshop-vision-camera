@@ -9,7 +9,7 @@ const plugins = [
   [
     "react-native-reanimated/plugin",
     {
-      globals: ["__scanCodes", "__scanFaces"],
+      globals: ["__scanCodes", "__scanFaces", "__scanOCR"],
     },
   ], // NOTE: this must be last in the plugins
 ]
