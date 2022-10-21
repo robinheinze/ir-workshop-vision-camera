@@ -13,6 +13,7 @@ import { useColorScheme } from "react-native"
 import Config from "../config"
 import {
   FacialRecognitionScreen,
+  ResultsScreen,
   ScannerScreen,
   TextRecognitionScreen,
   WelcomeScreen,
@@ -39,6 +40,9 @@ export type AppStackParamList = {
   FacialRecognition: undefined
   TextRecognition: undefined
   Scanner: undefined
+  Results: {
+    results: any
+  }
   // 🔥 Your screens go here
 }
 
@@ -64,6 +68,7 @@ const AppStack = observer(function AppStack() {
       <Stack.Screen name="Scanner" component={ScannerScreen} />
       <Stack.Screen name="FacialRecognition" component={FacialRecognitionScreen} />
       <Stack.Screen name="TextRecognition" component={TextRecognitionScreen} />
+      <Stack.Screen name="Results" component={ResultsScreen} />
     </Stack.Navigator>
   )
 })

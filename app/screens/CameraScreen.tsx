@@ -1,16 +1,17 @@
 import React, { FC, useEffect, useRef } from "react"
 import { observer } from "mobx-react-lite"
 import { ActivityIndicator, StyleSheet, View, ViewStyle } from "react-native"
-import { StackScreenProps } from "@react-navigation/stack"
+import { StackNavigationProp, StackScreenProps } from "@react-navigation/stack"
 import { AppStackParamList } from "../navigators"
 import { Camera, useCameraDevices } from "react-native-vision-camera"
 import { checkCameraPermission } from "../utils/checkCameraPermissions"
 import { spacing } from "../theme"
 import { CaptureButton } from "../components/CaptureButton"
-import { useIsFocused } from "@react-navigation/native"
+import { useIsFocused, useNavigation } from "@react-navigation/native"
 
 export const CameraScreen: FC<StackScreenProps<AppStackParamList, "Camera">> = observer(
   function CameraScreen() {
+    const navigation = useNavigation<StackNavigationProp<AppStackParamList>>()
     const camera = useRef<Camera>(null)
     const devices = useCameraDevices()
     const device = devices.back
@@ -30,7 +31,7 @@ export const CameraScreen: FC<StackScreenProps<AppStackParamList, "Camera">> = o
 
     const capture = async () => {
       const photo = await camera.current?.takePhoto({ flash: "auto" })
-      console.log(photo)
+      navigation.navigate("Results", { results: { photo } })
     }
 
     return (
