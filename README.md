@@ -3,16 +3,18 @@
 ## To install:
 
 - Clone it
-- `yarn && yarn ios`
+- Have an Android physical device connected
+- `yarn && yarn android`
 
-I recommend running this on a physical device so you have access to a real camera.
 
 ## Helpful Links
 
 [React Native Vision Camera on Github](https://github.com/mrousavy/react-native-vision-camera)
 [RNVC Guides](https://mrousavy.com/react-native-vision-camera/docs/guides/)
 [Vision Camera Code Scanner](https://github.com/rodgomesc/vision-camera-code-scanner)
-[react-native-hole-view](https://github.com/ibitcy/react-native-hole-view)
+[Vision Camera OCR](https://github.com/aarongrider/vision-camera-ocr)
+[Vision Camera Face Detector](https://github.com/rodgomesc/vision-camera-face-detector)
+[Community Plugins](https://mrousavy.com/react-native-vision-camera/docs/guides/frame-processor-plugin-list/)
 
 ## Barcode / QR scanning
 
